@@ -64,7 +64,7 @@
     // 프로젝트 카드 및 모달 데이터
     let modalData = [];
 
-    fetch('./data/projects.json')
+    fetch('https://jang-senoho.github.io/portfolio/data/projects.json')
       .then(res => res.json())
       .then(data => renderProjects(data))
       .catch(err => console.error(err));
