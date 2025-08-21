@@ -1,0 +1,51 @@
+.badge {
+  background: #2a2a2a;   // 카드보다 살짝 밝은 톤
+  color: #e0e0e0;        // 은은한 텍스트 컬러
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 9999px; // pill 형태
+  margin: 2px;
+  display: inline-block;
+  font-weight: 500;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: #3a3a3a; // hover 시 subtle 강조
+    transform: translateY(-2px);
+  }
+}
+
+
+.badge[data-tech="Next.js"] {
+  background: #00df9a;
+  color: #111;
+}
+
+.badge[data-tech="SCSS"] {
+  background: #cd6799;
+}
+
+.badge[data-tech="Java"] {
+  background: #f89820;
+}
+
+.badge[data-tech="HTML"] {
+  background: #e44d26;
+}
+
+.badge[data-tech="CSS"] {
+  background: #264de4;
+}
+
+.badge[data-tech="JavaScript"] {
+  background: #f7df1e;
+  color: #111;
+}
+
+
+.tech-badges {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}

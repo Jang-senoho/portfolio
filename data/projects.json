@@ -1,0 +1,138 @@
+[
+  {
+    "title": "온파크존",
+    "image": "./image/onpark.png",
+    "tech": "Next.js, SCSS, JAVA",
+    "tasks": "사용자 앱 퍼블리싱 및 데이터 바인딩 작업\n 홈페이지 퍼블리싱 및 데이터 바인딩 작업 \n 관리자 페이지 작업",
+    "link":"https://www.onparkzon.com"
+  },
+  {
+    "title": "무신사 글로벌",
+    "image": "./image/musinsa.png",
+    "tech": "React.js",
+    "tasks": "상품페이지 작업"
+  },
+  {
+    "title": "현대건설 기술교육원",
+    "image": "./image/hdec.png",
+    "tech": "HTML, SCSS, JavaScript",
+    "tasks": "반응형 웹 접근성 퍼블리싱 ",
+    "link":"https://edu.hdec.co.kr/web/default.aspx"
+  },
+  {
+    "title": "현대건설 사회공헌",
+    "image": "./image/hdec2.png",
+    "tech": "HTML, SCSS, JavaScript",
+    "tasks": "반응형 웹 접근성 퍼블리싱 ",
+    "link":"https://csr.hdec.kr/"
+  },
+  {
+    "title": "현대건설 ESG",
+    "image": "./image/hdec2.png",
+    "tech": "JavaScript",
+    "tasks": "웹 접근성 js 작업",
+    "link":"https://esg.hdec.kr/Home/Main"
+  },
+  {
+    "title": "포스코 기술투자",
+    "image": "./image/posoco.png",
+    "tech": "HTML, SCSS, JavaScript",
+    "tasks": "반응형 퍼블리싱 작업 ",
+    "link":"https://www.poscoinvestment.com/index"
+  },
+  {
+    "title": "위드동아",
+    "image": "./image/width-dong-a.png",
+    "tech": "HTML, SCSS, JavaScript",
+    "tasks": "반응형 퍼블리싱 작업 ",
+    "link":"https://with.donga.co.kr/"
+  },
+  {
+    "title": "현대카드 이벤트 페이지",
+    "image": "./image/HyundaiCard_Logomark.jpg",
+    "tech": "HTML, SCSS, JavaScript",
+    "tasks": "모바일 퍼블리싱 작업 "
+  },
+  {
+    "title": "서울도시철도GEN",
+    "image": "./image/city-rail-gen.png",
+    "tech": "HTML, SCSS, JavaScript",
+    "tasks": "유지보수 작업 "
+  },
+  {
+    "title": "LX 정도경영 포탈",
+    "image": "./image/posoco.png",
+    "tech": "HTML, SCSS, JavaScript",
+    "tasks": "페이지 퍼블리싱",
+    "isInternal": false
+  },
+  {
+    "title": "LG ess",
+    "image": "./image/lgess.svg",
+    "tech": "HTML, SCSS, JavaScript",
+    "tasks": "다국어 작업 \n 모바일, PC 신규페이지 작업 및 유지보수 ",
+    "link":"https://www.lgessbattery.com/m/us/main/main.lg"
+  },
+  {
+    "title": "LG RESU Monitor",
+    "image": "./image/RESU Monitor_final.png",
+    "tech": "HTML, SCSS, JavaScript ,BootStrap",
+    "tasks": "관리자 반응형 웹 작업"
+  },
+  {
+    "title": "LG Blog",
+    "image": "./image/lgess.svg",
+    "tech": "HTML, SCSS, JavaScript",
+    "tasks": "PC 페이지 퍼블리싱 \n 관리자 페이지 퍼블리싱 "
+  },
+  {
+    "title": "LG 컴플라이언스",
+    "image": "./image/lgess.svg",
+    "tech": "HTML, SCSS, JavaScript, Lg Rui",
+    "tasks": "PC 페이지 퍼블리싱",
+    "isInternal": false
+  },
+  {
+    "title": "LG SecuXper ESP",
+    "image": "./image/lgcns.png",
+    "tech": "HTML, SCSS, JavaScript, Lg Rui",
+    "tasks": "PC 페이지 퍼블리싱",
+    "isInternal": false
+  },
+  {
+    "title": "LG FDS 관리자",
+    "image": "./image/fds.png",
+    "tech": "HTML, SCSS, JavaScript, Lg Rui",
+    "tasks": "관리자 퍼블리싱",
+    "isInternal": false
+  },
+  {
+    "title": "Open KES",
+    "image": "./image/openkes.png",
+    "tech": "HTML, SCSS, JavaScript",
+    "tasks": "반응형 웹 작업",
+    "link":"https://products.openkes.org/main.do#none"
+  },
+  {
+    "title": "출하반장",
+    "image": "./image/captain_logo_1.png",
+    "tech": "HTML, SCSS, JavaScript",
+    "tasks": "반응형 웹 작업",
+    "link":"https://go.at.or.kr/chul"
+  },
+  {
+    "title": "헤이폴",
+    "image": "./image/heypoll.png",
+    "tech": "HTML, SCSS, JavaScript",
+    "tasks": "Pc, Mobile 웹 작업",
+    "link":"https://www.heypoll.co.kr/"
+  }
+  ,
+  {
+    "title": "비즈테크파트너스",
+    "image": "./image/biztech.jpg",
+    "tech": "PHP, SCSS, JavaScript",
+    "tasks": "운영, 유지보수 작업",
+    "link":"https://www.heypoll.co.kr/"
+  }
+]

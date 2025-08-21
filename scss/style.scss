@@ -1,0 +1,18 @@
+// 변수 & 믹스인
+@import 'abstracts/variables';
+// @import 'abstracts/mixins'; // 믹스인 필요시 추가
+
+// 기본 스타일
+@import 'base/base';
+@import 'base/typography';
+
+// 레이아웃
+@import 'layout/section';
+
+// 컴포넌트
+@import 'components/cards';
+@import 'components/modals';
+@import 'components/skills';
+@import 'components/work-card';
+@import 'components/badge'
+

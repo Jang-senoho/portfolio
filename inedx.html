@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>퍼블리셔 포트폴리오</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <!-- 1. 자기소개 -->
+  <section>
+    <h1 class="fade">안녕하세요. 성장하는 퍼블리셔 장선호입니다.</h1>
+  </section>
+  <section>
+    <h2 class="fade">나를 소개합니다.</h2>
+    <ul>
+      <li>
+        6년차 퍼블리셔, 1년차 프론트엔드 개발자 입니다.
+      </li>
+      <li>웹 접근성 표준을 준수한 퍼블리싱이 가능하며, 다양한 디바이스 환경에 최적화된 반응형 UI 구현에 전문성을 보유하고 있습니다.</li>
+      <li>고객 응대에 능숙하며, 고객과 원활한 소통을 통해 신뢰를 구축합니다.</li>
+      <li>사내 퍼블리싱팀에서 신규 및 주니어 구성원의 프로젝트 필수 기술(SCSS, JavaScript, Git) 교육을 담당하며, 팀의 기술 역량 향상에 기여하였습니다. </li>
+    </ul>
+  </section>
+  <section>
+    <h2 class="fade">업무 경험</h2>
+    <div class="work-card compact hover">
+      <img src="./image/image.png" alt="회사 로고">
+      <div class="company-name">(주) 프리버</div>
+      <div class="work-period">2018/06 ~ 2025/06</div>
+    </div>
+
+  </section>
+  <!-- 2. 프로젝트 경험 -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-grid" id="projectGrid"></div>
+  </section>
+
+  <!-- 모달 -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    // Fade 애니메이션
+    const fadeEls = document.querySelectorAll('.fade');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(el => observer.observe(el));
+
+    // 프로젝트 카드 및 모달 데이터
+    let modalData = [];
+
+    fetch('./data/projects.json')
+      .then(res => res.json())
+      .then(data => renderProjects(data))
+      .catch(err => console.error(err));
+
+    const grid = document.getElementById('projectGrid');
+    const modal = document.getElementById('modal');
+    const closeBtn = document.getElementById('closeBtn');
+    const modalContent = document.querySelector('.modal-content');
+
+    function renderProjects(projects) {
+      projects.forEach(proj => {
+        const card = document.createElement('div');
+        card.className = 'project-card';
+        card.innerHTML = `
+      <div class="img-banner"><img src="${proj.image}" alt="${proj.title}"></div>
+      <h3>${proj.title}</h3>
+      <div class="tech-badges">
+        ${proj.tech
+            .split(',')
+            .map(t => `<span class="badge" data-tech="${t.trim()}">${t.trim()}</span>`)
+            .join('')}
+            </div>
+    `;
+
+        card.addEventListener('click', () => openModal(proj));
+        grid.appendChild(card);
+      });
+    }
+
+    function openModal(project) {
+      const content = `
+    <h3>${project.title}</h3>
+    <p><strong>사용 기술:</strong>
+      ${project.tech.split(',').map(t => `<span class='badge'>${t.trim()}</span>`).join(' ')}
+    </p>
+    <p><strong>작업 내용:</strong></p> 
+    <ul>
+      ${project.tasks.split('\n').map(task => `<li>${task.trim()}</li>`).join('')}
+    </ul>
+    ${project.link ? `<p><a href="${project.link}" target="_blank">🔗 사이트 바로가기</a></p>` : ''}
+    ${project.isInternal === false ? `<p class="note">🛡 내부망 프로젝트로 외부 공개 불가</p>` : ''}
+ 
+  `;
+
+      modalContent.querySelector('h3')?.remove(); // 중복 방지용
+      modalContent.querySelector('img')?.remove(); // 기존 기본 구조 제거용
+
+      modalContent.innerHTML = `
+    <span class="close-btn" id="closeBtn">&times;</span>
+    ${content}
+  `;
+
+      modal.classList.add('active');
+
+      // 닫기 버튼 이벤트 다시 연결
+      document.getElementById('closeBtn').addEventListener('click', () => {
+        modal.classList.remove('active');
+      });
+    }
+
+    // 보유 스킬 숙련도 막대 애니메이션
+    const skillItems = document.querySelectorAll('.skill-list .skill-item');
+
+    const skillObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const levelBar = entry.target.querySelector('.skill-level');
+          const progress = entry.target.querySelector('.skill-bar').getAttribute('aria-valuenow');
+          levelBar.style.width = progress + '%';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    skillItems.forEach(item => skillObserver.observe(item));
+  </script>
+</body>
+
+</html>

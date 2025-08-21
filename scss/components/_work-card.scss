@@ -1,0 +1,31 @@
+.work-card.compact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1e1e1e;
+  border-radius: $radius-default;
+  padding: 1.5rem;
+  max-width: 220px;
+  box-shadow: $shadow-default;
+  gap: 0.5rem;
+
+  img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+  }
+
+  .company-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: $color-text-primary;
+    text-align: center;
+  }
+
+  .work-period {
+    font-size: 0.9rem;
+    color: $color-text-tertiary;
+    text-align: center;
+  }
+}
