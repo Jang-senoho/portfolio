@@ -57,7 +57,8 @@
     "title": "서울도시철도GEN",
     "image": "./image/city-rail-gen.png",
     "tech": "HTML, SCSS, JavaScript",
-    "tasks": "유지보수 작업 "
+    "tasks": "유지보수 작업 ",
+    "link": "https://www.smrtg.co.kr/"
   },
   {
     "title": "LX 정도경영 포탈",
@@ -77,13 +78,15 @@
     "title": "LG RESU Monitor",
     "image": "./image/RESU Monitor_final.png",
     "tech": "HTML, SCSS, JavaScript ,BootStrap",
-    "tasks": "관리자 반응형 웹 작업"
+    "tasks": "관리자 반응형 웹 작업",
+    "isInternal": false
   },
   {
     "title": "LG Blog",
     "image": "./image/lgess.svg",
     "tech": "HTML, SCSS, JavaScript",
-    "tasks": "PC 페이지 퍼블리싱 \n 관리자 페이지 퍼블리싱 "
+    "tasks": "PC 페이지 퍼블리싱 \n 관리자 페이지 퍼블리싱 ",
+    "isInternal": false
   },
   {
     "title": "LG 컴플라이언스",
