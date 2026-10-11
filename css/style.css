@@ -396,3 +396,47 @@ section:nth-of-type(even) {
       flex-wrap: wrap;
   margin-top: 8px;
 }
+
+
+/* 평소 웹 화면에서는 출력용 영역 숨김 */
+#printProjectDetails {
+  display: none;
+}
+
+/* PDF / 인쇄 전용 */
+@media print {
+  #projectGrid {
+    display: none !important;
+  }
+
+  #printProjectDetails {
+    display: block !important;
+  }
+
+  #printProjectDetails .print-project {
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  #printProjectDetails h3 {
+    font-size: 18pt;
+    margin-bottom: 12px;
+    break-after: avoid;
+  }
+
+  #printProjectDetails p,
+  #printProjectDetails li {
+    font-size: 10pt;
+    line-height: 1.6;
+  }
+
+  #printProjectDetails ul {
+    padding-left: 20px;
+  }
+
+  #printProjectDetails a {
+    color: #000;
+    text-decoration: none;
+  }
+}

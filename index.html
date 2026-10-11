@@ -13,13 +13,13 @@
 
   <!-- 1. 자기소개 -->
   <section>
-    <h1 class="fade">안녕하세요. 성장하는 퍼블리셔 장선호입니다.</h1>
+    <h1 class="fade">안녕하세요. UI/UX 최적화 역량을 갖춘 프론트엔드 개발자 / 웹 퍼블리셔 장선호입니다</h1>
   </section>
   <section>
     <h2 class="fade">나를 소개합니다.</h2>
     <ul>
       <li>
-        6년차 퍼블리셔, 1년차 프론트엔드 개발자 입니다.
+        년 이상의 웹 퍼블리싱 경험을 기반으로, 화면 단의 완벽한 이해도와 데이터 연동 능력을 겸비한 6년 차 올라운더 개발자입니다
       </li>
       <li>웹 접근성 표준을 준수한 퍼블리싱이 가능하며, 다양한 디바이스 환경에 최적화된 반응형 UI 구현에 전문성을 보유하고 있습니다.</li>
       <li>고객 응대에 능숙하며, 고객과 원활한 소통을 통해 신뢰를 구축합니다.</li>
@@ -39,6 +39,8 @@
   <section id="projects">
     <h2>Projects</h2>
     <div class="project-grid" id="projectGrid"></div>
+    <!-- PDF 출력용 프로젝트 상세 -->
+    <div id="printProjectDetails"></div>
   </section>
 
   <!-- 모달 -->
@@ -66,7 +68,10 @@
 
     fetch('https://jang-senoho.github.io/portfolio/data/projects.json')
       .then(res => res.json())
-      .then(data => renderProjects(data))
+      .then(data => {
+        renderProjects(data);
+        renderPrintProjects(data);
+      })
       .catch(err => console.error(err));
 
     const grid = document.getElementById('projectGrid');
@@ -140,6 +145,39 @@
     }, { threshold: 0.3 });
 
     skillItems.forEach(item => skillObserver.observe(item));
+
+    // PDF 출력용 프로젝트 상세 생성
+function renderPrintProjects(projects) {
+  const printContainer = document.getElementById('printProjectDetails');
+
+  printContainer.innerHTML = projects.map(proj => `
+    <article class="print-project">
+      <h3>${proj.title}</h3>
+
+      <p>
+        <strong>사용 기술:</strong>
+        ${proj.tech.split(',').map(t => t.trim()).join(', ')}
+      </p>
+
+      <p><strong>작업 내용</strong></p>
+      <ul>
+        ${proj.tasks.split('\n')
+          .map(task => task.trim())
+          .filter(task => task)
+          .map(task => `<li>${task}</li>`)
+          .join('')}
+      </ul>
+
+      ${proj.link
+        ? `<p>사이트: ${proj.link}</p>`
+        : ''}
+
+      ${proj.isInternal === false
+        ? '<p class="note">내부망 프로젝트로 외부 공개 불가</p>'
+        : ''}
+    </article>
+  `).join('');
+}
   </script>
 </body>
 
