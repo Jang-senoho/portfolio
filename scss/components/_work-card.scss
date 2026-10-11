@@ -29,3 +29,9 @@
     text-align: center;
   }
 }
+
+.work-card-wrap{
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}

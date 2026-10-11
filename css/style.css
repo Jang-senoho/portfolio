@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -342,6 +343,15 @@ section:nth-of-type(even) {
   text-align: center;
 }
 
+.work-card-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 25px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
 .badge {
   background: #2a2a2a;
   color: #e0e0e0;
@@ -397,7 +407,6 @@ section:nth-of-type(even) {
   margin-top: 8px;
 }
 
-
 /* 평소 웹 화면에서는 출력용 영역 숨김 */
 #printProjectDetails {
   display: none;
@@ -408,33 +417,29 @@ section:nth-of-type(even) {
   #projectGrid {
     display: none !important;
   }
-
   #printProjectDetails {
     display: block !important;
+    background-color: black;
   }
-
   #printProjectDetails .print-project {
     margin-bottom: 32px;
     padding-bottom: 20px;
     border-bottom: 1px solid #ccc;
   }
-
   #printProjectDetails h3 {
     font-size: 18pt;
     margin-bottom: 12px;
-    break-after: avoid;
+    -webkit-column-break-after: avoid;
+            break-after: avoid;
   }
-
   #printProjectDetails p,
   #printProjectDetails li {
     font-size: 10pt;
     line-height: 1.6;
   }
-
   #printProjectDetails ul {
     padding-left: 20px;
   }
-
   #printProjectDetails a {
     color: #000;
     text-decoration: none;
